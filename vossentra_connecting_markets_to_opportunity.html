@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOSSENTRA — Connecting Markets to Opportunity.</title>
+  <meta name="description" content="Vossentra is an international B2B market intelligence and growth agency helping businesses identify market opportunities, understand potential customers, and build strategic business connections worldwide." />
+  <meta name="theme-color" content="#061435" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              950: '#040D24',
+              900: '#061435',
+              800: '#0A1E4D',
+              700: '#102C6B',
+            },
+            brand: {
+              blue: '#0066CC',
+              cyan: '#00A8E8',
+              light: '#38BDF8',
+              surface: '#F4F7FB',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom subtle styles for brand fidelity and smooth view transitions */
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #0F172A;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    /* Hero architectural & global mesh styling matching the Vossentra Brand Board */
+    .hero-backdrop {
+      background: radial-gradient(circle at 75% 40%, #0E347A 0%, #071942 48%, #040D24 100%);
+    }
+
+    .dot-matrix {
+      background-image: radial-gradient(rgba(56, 189, 248, 0.22) 1.25px, transparent 1.25px);
+      background-size: 22px 22px;
+    }
+
+    .page-view {
+      display: none;
+      animation: fadeSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .page-view.active {
+      display: block;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Subtle reveal animation for scroll elements */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F4F7FB;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-blue selection:text-white flex flex-col min-h-screen">
+
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION BAR (Matches Brand Board Bottom Header Layout)         -->
+  <!-- ===================================================================== -->
+  <header id="site-header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo (Custom SVG matching uploaded Vossentra Brand Identity Board) -->
+        <a href="#home" data-route="home" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-11 h-11 flex-shrink-0">
+            <svg viewBox="0 0 120 105" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" aria-hidden="true">
+              <defs>
+                <linearGradient id="vLeftGrad" x1="12" y1="20" x2="56" y2="95" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#0095EB"/>
+                  <stop offset="55%" stop-color="#0055B8"/>
+                  <stop offset="100%" stop-color="#061E54"/>
+                </linearGradient>
+                <linearGradient id="vRightGrad" x1="48" y1="90" x2="90" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#0A2B73"/>
+                  <stop offset="50%" stop-color="#0077D6"/>
+                  <stop offset="100%" stop-color="#00B4F0"/>
+                </linearGradient>
+                <radialGradient id="globeGrad" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#38BDF8"/>
+                  <stop offset="55%" stop-color="#0066CC"/>
+                  <stop offset="100%" stop-color="#061A4A"/>
+                </radialGradient>
+              </defs>
+              <!-- Left Geometric Wing of V -->
+              <path d="M12 22H36L57 68L45 94L12 22Z" fill="url(#vLeftGrad)"/>
+              <!-- Right Geometric Wing of V -->
+              <path d="M45 94L68 44H90L62 94H45Z" fill="url(#vRightGrad)"/>
+              <!-- Orbiting Swoosh Curve -->
+              <path d="M16 64C28 42 52 24 81 17" stroke="#0088E0" stroke-width="4.5" stroke-linecap="round"/>
+              <path d="M75 13L84 16.5L78 24" fill="#0088E0"/>
+              <!-- Stylized Globe Icon (Upper Right) -->
+              <circle cx="95" cy="24" r="19" fill="url(#globeGrad)"/>
+              <!-- Subtle Continent Silhouettes inside Globe -->
+              <path d="M87 13C90 12 94 14 93 18C92 21 88 22 86 20C84 18 85 14 87 13Z" fill="#FFFFFF" fill-opacity="0.9"/>
+              <path d="M98 16C102 15 107 18 106 23C105 27 101 29 98 27C95 25 95 18 98 16Z" fill="#FFFFFF" fill-opacity="0.92"/>
+              <path d="M88 27C91 26 95 29 94 34C93 37 89 38 87 35C85 33 86 28 88 27Z" fill="#FFFFFF" fill-opacity="0.85"/>
+              <!-- Globe Meridian Ring -->
+              <ellipse cx="95" cy="24" rx="18.5" ry="7" transform="rotate(-24 95 24)" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-xl sm:text-2xl tracking-wider text-navy-900 leading-none">VOSSENTRA</span>
+            <span class="text-[10px] sm:text-[11px] italic text-slate-500 font-medium tracking-tight mt-0.5">Connecting Markets to Opportunity.</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-8" aria-label="Primary Navigation">
+          <a href="#home" data-route="home" class="nav-item text-sm font-semibold text-brand-blue border-b-2 border-brand-blue py-1 transition-colors">Home</a>
+          <a href="#about" data-route="about" class="nav-item text-sm font-medium text-slate-700 hover:text-brand-blue border-b-2 border-transparent py-1 transition-colors">About Us</a>
+          <a href="#services" data-route="services" class="nav-item text-sm font-medium text-slate-700 hover:text-brand-blue border-b-2 border-transparent py-1 transition-colors">Services</a>
+          <a href="#solutions" data-route="solutions" class="nav-item text-sm font-medium text-slate-700 hover:text-brand-blue border-b-2 border-transparent py-1 transition-colors">Market Solutions</a>
+          <a href="#contact" data-route="contact" class="nav-item text-sm font-medium text-slate-700 hover:text-brand-blue border-b-2 border-transparent py-1 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA Button -->
+        <div class="hidden lg:flex items-center">
+          <a href="#contact" data-route="contact" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-navy-800 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-all duration-200">
+            <span>Get in Touch</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex lg:hidden">
+          <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2.5 rounded-lg text-navy-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-blue" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-close" class="hidden w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 shadow-lg">
+      <div class="px-4 pt-3 pb-6 space-y-1.5">
+        <a href="#home" data-route="home" class="mobile-nav-item block px-3.5 py-2.5 rounded-lg text-base font-semibold bg-brand-surface text-brand-blue">Home</a>
+        <a href="#about" data-route="about" class="mobile-nav-item block px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">About Us</a>
+        <a href="#services" data-route="services" class="mobile-nav-item block px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Services</a>
+        <a href="#solutions" data-route="solutions" class="mobile-nav-item block px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Market Solutions</a>
+        <a href="#contact" data-route="contact" class="mobile-nav-item block px-3.5 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-brand-blue">Contact</a>
+        <div class="pt-3">
+          <a href="#contact" data-route="contact" class="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-navy-800 text-white text-base font-semibold px-5 py-3 rounded-lg transition-colors">
+            <span>Contact Us</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN CONTENT AREA (Multi-Page Views)                                  -->
+  <!-- ===================================================================== -->
+  <main class="flex-grow">
+
+    <!-- =================================================================== -->
+    <!-- VIEW 1: HOME                                                        -->
+    <!-- =================================================================== -->
+    <section id="view-home" class="page-view active">
+      
+      <!-- Hero Section (Inspired by Brand Board Bottom Skyline & Digital Globe Banner) -->
+      <div class="relative hero-backdrop text-white overflow-hidden">
+        <!-- Subtle World Dot Matrix Overlay -->
+        <div class="absolute inset-0 dot-matrix opacity-40 pointer-events-none"></div>
+
+        <!-- Glowing Wireframe Digital Globe & Skyline Architectural SVG Illustration -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          <svg viewBox="0 0 1440 640" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full object-cover object-right-bottom opacity-90" preserveAspectRatio="xMidYMax slice">
+            <defs>
+              <radialGradient id="globeGlow" cx="76%" cy="56%" r="42%">
+                <stop offset="0%" stop-color="#00A8E8" stop-opacity="0.45"/>
+                <stop offset="55%" stop-color="#0066CC" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#040D24" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="skylineGrad" x1="720" y1="360" x2="720" y2="640" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#0A235A" stop-opacity="0.88"/>
+                <stop offset="100%" stop-color="#030919" stop-opacity="0.98"/>
+              </linearGradient>
+              <linearGradient id="waterReflection" x1="720" y1="575" x2="720" y2="640" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00A8E8" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#030919" stop-opacity="0.95"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Ambient Digital Globe Glow -->
+            <rect width="1440" height="640" fill="url(#globeGlow)"/>
+
+            <!-- Wireframe Digital Globe Sphere on Right -->
+            <g transform="translate(1080, 360)">
+              <circle cx="0" cy="0" r="245" stroke="#38BDF8" stroke-opacity="0.32" stroke-width="1.5"/>
+              <circle cx="0" cy="0" r="243" stroke="#00A8E8" stroke-opacity="0.15" stroke-width="6"/>
+              <ellipse cx="0" cy="0" rx="195" ry="245" stroke="#38BDF8" stroke-opacity="0.2"/>
+              <ellipse cx="0" cy="0" rx="135" ry="245" stroke="#38BDF8" stroke-opacity="0.22"/>
+              <ellipse cx="0" cy="0" rx="68" ry="245" stroke="#38BDF8" stroke-opacity="0.2"/>
+              <ellipse cx="0" cy="0" rx="245" ry="185" stroke="#38BDF8" stroke-opacity="0.18"/>
+              <ellipse cx="0" cy="0" rx="245" ry="115" stroke="#38BDF8" stroke-opacity="0.22"/>
+              <ellipse cx="0" cy="0" rx="245" ry="45" stroke="#38BDF8" stroke-opacity="0.24"/>
+              <!-- Orbital Data Arcs & Nodes -->
+              <path d="M-270 -40C-140 -150 140 -150 270 -40" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <path d="M-260 65C-110 -45 120 -55 265 55" stroke="#00A8E8" stroke-opacity="0.6" stroke-width="1.5"/>
+              <circle cx="-125" cy="-96" r="4" fill="#7DD3FC"/>
+              <circle cx="85" cy="-112" r="4.5" fill="#FFFFFF"/>
+              <circle cx="155" cy="-12" r="3.5" fill="#38BDF8"/>
+              <circle cx="-65" cy="18" r="4" fill="#FFFFFF"/>
+            </g>
+
+            <!-- Modern Metropolitan Financial Skyline Silhouette -->
+            <path d="M0 575H490V535H515V495H545V525H570V465H605V510H630V430H665V395H685V430H705V485H730V410H772V470H795V365H818V338H832V365H852V450H878V390H915V460H940V348H975V320H992V348H1015V445H1042V380H1082V435H1108V355H1146V425H1172V395H1208V465H1235V420H1272V485H1305V455H1345V515H1390V495H1440V575H0Z" fill="url(#skylineGrad)"/>
+
+            <!-- Subtle Illuminated Tower Windows -->
+            <g fill="#38BDF8" fill-opacity="0.32">
+              <rect x="642" y="445" width="3" height="18"/>
+              <rect x="650" y="445" width="3" height="18"/>
+              <rect x="642" y="472" width="3" height="18"/>
+              <rect x="805" y="382" width="3" height="24"/>
+              <rect x="814" y="382" width="3" height="24"/>
+              <rect x="823" y="382" width="3" height="24"/>
+              <rect x="805" y="418" width="3" height="24"/>
+              <rect x="814" y="418" width="3" height="24"/>
+              <rect x="952" y="365" width="3" height="28"/>
+              <rect x="962" y="365" width="3" height="28"/>
+              <rect x="972" y="365" width="3" height="28"/>
+              <rect x="982" y="365" width="3" height="28"/>
+              <rect x="952" y="405" width="3" height="28"/>
+              <rect x="972" y="405" width="3" height="28"/>
+              <rect x="1118" y="375" width="3" height="22"/>
+              <rect x="1128" y="375" width="3" height="22"/>
+              <rect x="1118" y="408" width="3" height="22"/>
+            </g>
+
+            <!-- Horizon Waterline & Shimmer -->
+            <rect x="0" y="575" width="1440" height="65" fill="url(#waterReflection)"/>
+            <line x1="0" y1="575" x2="1440" y2="575" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1"/>
+          </svg>
+        </div>
+
+        <!-- Hero Foreground Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-36">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-3 mb-6">
+              <span class="text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-sky-300">Global B2B Growth Partner</span>
+              <span class="w-12 h-[2px] bg-sky-400/70"></span>
+            </div>
+
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-white mb-6">
+              Connecting Markets to <span class="text-brand-cyan">Opportunity.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg lg:text-xl text-slate-200/95 leading-relaxed mb-9 max-w-xl font-normal">
+              Vossentra is an international B2B market intelligence and business development agency helping organisations identify viable opportunities, understand prospective buyers, and build strategic connections worldwide.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a href="#contact" data-route="contact" class="inline-flex items-center justify-center gap-2.5 bg-brand-cyan hover:bg-sky-400 text-navy-950 font-bold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-sky-500/20 transition-all duration-200">
+                <span>Contact Us</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </a>
+              <a href="#services" data-route="services" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white border border-white/25 font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full backdrop-blur-sm transition-all duration-200">
+                <span>Explore Our Services</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Banner Strip: Explore. Connect. Grow. (4 Core Pillars from Brand Board) -->
+      <div class="bg-navy-900 border-t border-white/10 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 flex-grow">
+              <!-- Pillar 1 -->
+              <div class="flex items-center gap-3.5 lg:border-r lg:border-white/15 lg:pr-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-blue/25 border border-sky-400/30 flex items-center justify-center text-brand-cyan flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 4 4 5-6"/></svg>
+                </div>
+                <div>
+                  <span class="block text-sm font-bold tracking-wide text-white">Market Intelligence</span>
+                  <span class="block text-xs text-slate-400">Structured sector insight</span>
+                </div>
+              </div>
+              <!-- Pillar 2 -->
+              <div class="flex items-center gap-3.5 lg:border-r lg:border-white/15 lg:pr-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-blue/25 border border-sky-400/30 flex items-center justify-center text-brand-cyan flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+                </div>
+                <div>
+                  <span class="block text-sm font-bold tracking-wide text-white">Business Development</span>
+                  <span class="block text-xs text-slate-400">Commercial expansion</span>
+                </div>
+              </div>
+              <!-- Pillar 3 -->
+              <div class="flex items-center gap-3.5 lg:border-r lg:border-white/15 lg:pr-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-blue/25 border border-sky-400/30 flex items-center justify-center text-brand-cyan flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="m20 20-3.5-3.5"/></svg>
+                </div>
+                <div>
+                  <span class="block text-sm font-bold tracking-wide text-white">Market Research</span>
+                  <span class="block text-xs text-slate-400">Evidence-led analysis</span>
+                </div>
+              </div>
+              <!-- Pillar 4 -->
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-lg bg-brand-blue/25 border border-sky-400/30 flex items-center justify-center text-brand-cyan flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3a14.5 14.5 0 0 1 0 18 14.5 14.5 0 0 1 0-18"/></svg>
+                </div>
+                <div>
+                  <span class="block text-sm font-bold tracking-wide text-white">Strategic Connections</span>
+                  <span class="block text-xs text-slate-400">Decision-maker alignment</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brand Motto -->
+            <div class="lg:pl-6 lg:border-l lg:border-white/15 flex-shrink-0">
+              <p class="font-display font-bold text-base sm:text-lg tracking-tight text-white">
+                Explore. Connect. <span class="text-brand-cyan">Grow.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Executive Positioning Section -->
+      <div class="py-20 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="lg:col-span-6 reveal-item">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">International Market Advisory</p>
+              <h2 class="font-display font-bold text-3xl sm:text-4xl text-navy-900 tracking-tight leading-tight mb-6">
+                Clarity before outreach. Precision in every market.
+              </h2>
+              <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-5">
+                Entering new territories or expanding into unfamiliar B2B segments requires more than generic contact lists or high-volume messaging. It demands rigorous market intelligence, commercial context, and a clear understanding of how target organisations evaluate new partners.
+              </p>
+              <p class="text-slate-600 text-base leading-relaxed mb-8">
+                Vossentra equips medium-sized and established enterprises with structured buyer research, international market analysis, and strategic business development frameworks designed for sustainable cross-border growth.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="#about" data-route="about" class="inline-flex items-center gap-2 text-sm font-bold text-brand-blue hover:text-navy-900 transition-colors">
+                  <span>Discover Our Approach</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Architectural Consulting Cards -->
+            <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-item">
+              <div class="bg-brand-surface border border-slate-200/80 rounded-xl p-7">
+                <div class="w-11 h-11 rounded-lg bg-navy-900 text-brand-cyan flex items-center justify-center mb-5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></svg>
+                </div>
+                <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Research-Led Intelligence</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  We investigate industry dynamics, competitive positioning, and buying signals before a single outreach message is sent.
+                </p>
+              </div>
+
+              <div class="bg-brand-surface border border-slate-200/80 rounded-xl p-7">
+                <div class="w-11 h-11 rounded-lg bg-navy-900 text-brand-cyan flex items-center justify-center mb-5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                </div>
+                <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Cross-Border Reach</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Structured market exploration supporting expansion into North America, Europe, and high-growth international hubs.
+                </p>
+              </div>
+
+              <div class="bg-brand-surface border border-slate-200/80 rounded-xl p-7">
+                <div class="w-11 h-11 rounded-lg bg-navy-900 text-brand-cyan flex items-center justify-center mb-5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>
+                </div>
+                <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Decision-Maker Mapping</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Accurate identification of commercial stakeholders, operational leaders, and buying committees within target firms.
+                </p>
+              </div>
+
+              <div class="bg-brand-surface border border-slate-200/80 rounded-xl p-7">
+                <div class="w-11 h-11 rounded-lg bg-navy-900 text-brand-cyan flex items-center justify-center mb-5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                </div>
+                <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Strategic Execution</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Consultative outbound frameworks and sales development support tailored to protect your brand reputation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Capabilities Overview on Home -->
+      <div class="py-20 sm:py-24 bg-brand-surface border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mb-14 reveal-item">
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">Core Capabilities</p>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-navy-900 tracking-tight mb-4">
+              End-to-end intelligence and market entry support
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+              From early-stage opportunity assessment to structured business development campaigns, our capabilities bridge the gap between market insight and commercial engagement.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-item">
+            <div class="bg-white rounded-xl p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue bg-blue-50 px-3 py-1 rounded-full mb-5">Intelligence &amp; Analysis</span>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">B2B Market Intelligence &amp; Research</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  In-depth analysis of target industries, regional demand drivers, competitor positioning, and commercial entry barriers so your leadership team moves with certainty.
+                </p>
+              </div>
+              <a href="#services" data-route="services" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:text-navy-900">
+                <span>View intelligence services</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue bg-blue-50 px-3 py-1 rounded-full mb-5">Buyer Alignment</span>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Opportunity &amp; Decision-Maker Mapping</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Systematic identification of ideal corporate accounts and the executives who influence procurement, strategy, and vendor partnerships.
+                </p>
+              </div>
+              <a href="#services" data-route="services" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:text-navy-900">
+                <span>Explore buyer research</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue bg-blue-50 px-3 py-1 rounded-full mb-5">International Growth</span>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Business &amp; Sales Development</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                  Structured outbound strategy and sales development support engineered to initiate credible B2B conversations in domestic and international markets, including the US.
+                </p>
+              </div>
+              <a href="#solutions" data-route="solutions" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:text-navy-900">
+                <span>Explore market solutions</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home Bottom CTA Banner -->
+      <div class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="bg-navy-900 rounded-2xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden reveal-item">
+            <div class="absolute inset-0 dot-matrix opacity-25 pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              <div class="max-w-2xl">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-cyan mb-3">Start a Strategic Conversation</p>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight mb-4">
+                  Ready to evaluate your next international market opportunity?
+                </h2>
+                <p class="text-slate-300 text-base leading-relaxed">
+                  Share your growth objectives and target regions with our advisory team. We will outline a research-driven approach tailored to your commercial goals.
+                </p>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+                <a href="#contact" data-route="contact" class="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-sky-400 text-navy-950 font-bold text-sm sm:text-base px-7 py-3.5 rounded-full transition-colors">
+                  <span>Contact Us</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 2: ABOUT US                                                    -->
+    <!-- =================================================================== -->
+    <section id="view-about" class="page-view">
+      
+      <!-- Subpage Header -->
+      <div class="hero-backdrop text-white py-20 sm:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 dot-matrix opacity-30 pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-2 text-xs font-medium text-slate-300 mb-4">
+            <a href="#home" data-route="home" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-brand-cyan">About Us</span>
+          </div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan mb-3">About Vossentra</p>
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight max-w-3xl leading-tight mb-5">
+            An international partner for market intelligence and business development
+          </h1>
+          <p class="text-slate-200 text-base sm:text-lg max-w-2xl leading-relaxed">
+            We help organisations understand markets with precision, establish meaningful business connections, and pursue international expansion with clarity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Our Purpose -->
+      <div class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">Our Purpose</p>
+              <h2 class="font-display font-bold text-3xl sm:text-4xl text-navy-900 tracking-tight mb-6">
+                Turning market understanding into structured commercial opportunity
+              </h2>
+              <p class="text-slate-700 text-base sm:text-lg leading-relaxed mb-5">
+                Vossentra is an international B2B market intelligence and growth agency operating worldwide. We exist to help established and scaling businesses make disciplined, evidence-backed decisions about where and how to expand.
+              </p>
+              <p class="text-slate-600 text-base leading-relaxed mb-5">
+                Entering new markets and engaging new corporate buyers is rarely a matter of simply collecting names. Sustainable commercial expansion requires a clear grasp of how a target sector operates, which organisations fit your value proposition, who shapes internal purchasing decisions, and what makes a strategic conversation worthwhile for them.
+              </p>
+              <p class="text-slate-600 text-base leading-relaxed">
+                That is where Vossentra focuses. By combining rigorous research, buyer intelligence, and consultative business development strategy, we provide our clients with an objective view of their market landscape and a practical roadmap to engage it.
+              </p>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div class="bg-navy-900 text-white rounded-2xl p-8 sm:p-10 relative overflow-hidden">
+                <div class="absolute inset-0 dot-matrix opacity-20 pointer-events-none"></div>
+                <div class="relative z-10">
+                  <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-cyan mb-4">Our Core Philosophy</p>
+                  <h3 class="font-display font-bold text-2xl leading-snug mb-4">
+                    Intelligence First. Outreach Second.
+                  </h3>
+                  <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Vossentra is not a generic contact-list broker or mass lead-selling operation. Every engagement begins with structured investigation of your market, your competitive positioning, and your prospective buyers.
+                  </p>
+                  <div class="border-t border-white/15 pt-5 space-y-3 text-sm text-slate-200">
+                    <div class="flex items-start gap-2.5">
+                      <span class="text-brand-cyan font-bold">&bull;</span>
+                      <span>Evidence-based market and sector validation</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                      <span class="text-brand-cyan font-bold">&bull;</span>
+                      <span>Relevance-driven buyer and stakeholder alignment</span>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                      <span class="text-brand-cyan font-bold">&bull;</span>
+                      <span>Reputation-safe commercial outreach strategy</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Four Foundations -->
+      <div class="py-20 bg-brand-surface border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mb-14">
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">What Defines Us</p>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-navy-900 tracking-tight">
+              Four foundations behind every engagement
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl p-7 border border-slate-200/90">
+              <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" stroke-linejoin="round" d="m20 20-3.5-3.5"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Research</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Disciplined, verifiable investigation of industries, regional markets, and target organisations.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-7 border border-slate-200/90">
+              <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Market Understanding</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Deep context on how buyers evaluate solutions, how decisions are structured, and what shapes commercial demand.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-7 border border-slate-200/90">
+              <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Business Connections</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Targeted strategies for reaching and engaging the businesses and decision-makers most aligned with your capabilities.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-7 border border-slate-200/90">
+              <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3a14.5 14.5 0 0 1 0 18 14.5 14.5 0 0 1 0-18"/></svg>
+              </div>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">International Expansion</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Structured guidance for evaluating and entering new countries and regions with commercial clarity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operating Principles & Who We Work With -->
+      <div class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center mb-14">
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">Who We Serve</p>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-navy-900 tracking-tight mb-4">
+              Built for medium-sized and established international businesses
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+              Our advisory and research frameworks support organisations seeking structured commercial intelligence as they expand into new sectors and regions.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="border border-slate-200 rounded-xl p-8">
+              <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Established B2B Enterprises</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Organisations with proven offerings seeking to enter adjacent industry verticals or geographic territories with a research-led growth plan.
+              </p>
+            </div>
+
+            <div class="border border-slate-200 rounded-xl p-8">
+              <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Cross-Border Growth Teams</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Companies evaluating or preparing for international expansion—including entry into the United States and other major commercial markets.
+              </p>
+            </div>
+
+            <div class="border border-slate-200 rounded-xl p-8">
+              <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Commercial &amp; Revenue Leaders</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Founders, managing directors, and sales leaders who require sharper buyer intelligence and disciplined outbound frameworks for their teams.
+              </p>
+            </div>
+          </div>
+
+          <!-- Operating Values Strip -->
+          <div class="bg-brand-surface border border-slate-200 rounded-2xl p-8 sm:p-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div>
+                <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Integrity</h4>
+                <p class="text-sm text-slate-600">We report objective findings clearly and transparently, without inflated claims.</p>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Precision</h4>
+                <p class="text-sm text-slate-600">We prioritise commercial fit and stakeholder relevance over indiscriminate volume.</p>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Depth</h4>
+                <p class="text-sm text-slate-600">We deliver context-rich intelligence designed to inform executive decisions.</p>
+              </div>
+              <div>
+                <h4 class="font-display font-bold text-base text-navy-900 mb-1.5">Partnership</h4>
+                <p class="text-sm text-slate-600">We operate as an extension of your commercial strategy and expansion team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 3: SERVICES (All 7 Core Services)                              -->
+    <!-- =================================================================== -->
+    <section id="view-services" class="page-view">
+      
+      <!-- Subpage Header -->
+      <div class="hero-backdrop text-white py-20 sm:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 dot-matrix opacity-30 pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-2 text-xs font-medium text-slate-300 mb-4">
+            <a href="#home" data-route="home" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-brand-cyan">Services</span>
+          </div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan mb-3">Advisory &amp; Execution Capabilities</p>
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight max-w-3xl leading-tight mb-5">
+            B2B Market Intelligence &amp; Growth Services
+          </h1>
+          <p class="text-slate-200 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Structured intelligence, market analysis, and commercial development services designed to help international businesses identify and capture high-fit opportunities.
+          </p>
+        </div>
+      </div>
+
+      <!-- 7 Services Grid -->
+      <div class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Service 1: B2B Market Intelligence -->
+            <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm hover:border-brand-blue/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-navy-900 text-brand-cyan flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>
+                  </div>
+                  <span class="text-xs font-bold text-slate-400">01</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">B2B Market Intelligence</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                  Actionable intelligence on sector dynamics, competitive positioning, purchasing drivers, and commercial trends to support strategic leadership decisions.
+                </p>
+                <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Industry landscape &amp; competitive mapping</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Sector demand &amp; procurement trend briefings</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Account-level strategic context reports</li>
+                </ul>
+              </div>
+              <button type="button" data-inquire-service="B2B Market Intelligence" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-blue hover:text-navy-900 transition-colors">
+                <span>Request advisory scope</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </article>
+
+            <!-- Service 2: International Market Research -->
+            <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm hover:border-brand-blue/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-navy-900 text-brand-cyan flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3a14.5 14.5 0 0 1 0 18 14.5 14.5 0 0 1 0-18"/></svg>
+                  </div>
+                  <span class="text-xs font-bold text-slate-400">02</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">International Market Research</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                  Cross-border market assessments evaluating regional demand, commercial norms, entry requirements, and target segment viability before capital commitment.
+                </p>
+                <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Country &amp; regional market feasibility studies</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Local competitor &amp; pricing structure analysis</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Cross-border commercial entry considerations</li>
+                </ul>
+              </div>
+              <button type="button" data-inquire-service="International Market Research" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-blue hover:text-navy-900 transition-colors">
+                <span>Request advisory scope</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </article>
+
+            <!-- Service 3: Market Opportunity Identification -->
+            <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm hover:border-brand-blue/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-navy-900 text-brand-cyan flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+                  </div>
+                  <span class="text-xs font-bold text-slate-400">03</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Market Opportunity Identification</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                  Pinpointing underserved segments, high-fit B2B verticals, and prospective customer cohorts where your capabilities solve urgent operational needs.
+                </p>
+                <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Ideal Customer Profile (ICP) refinement</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Vertical &amp; sub-sector prioritisation</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Qualified target account universe curation</li>
+                </ul>
+              </div>
+              <button type="button" data-inquire-service="Market Opportunity Identification" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-blue hover:text-navy-900 transition-colors">
+                <span>Request advisory scope</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </article>
+
+            <!-- Service 4: Buyer and Decision-Maker Research -->
+            <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm hover:border-brand-blue/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-navy-900 text-brand-cyan flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>
+                  </div>
+                  <span class="text-xs font-bold text-slate-400">04</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Buyer and Decision-Maker Research</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                  Structured mapping of organisational hierarchies, economic buyers, technical evaluators, and key stakeholders within target B2B accounts.
+                </p>
+                <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Buying committee &amp; stakeholder mapping</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Role-specific commercial priority insights</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Verified executive &amp; operational profile dossiers</li>
+                </ul>
+              </div>
+              <button type="button" data-inquire-service="Buyer and Decision-Maker Research" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-blue hover:text-navy-900 transition-colors">
+                <span>Request advisory scope</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </article>
+
+            <!-- Service 5: Strategic Business Development -->
+            <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm hover:border-brand-blue/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-navy-900 text-brand-cyan flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/></svg>
+                  </div>
+                  <span class="text-xs font-bold text-slate-400">05</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Strategic Business Development</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                  Designing structured pathways to establish commercial partnerships, distribution channels, and enterprise client relationships in new markets.
+                </p>
+                <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Market entry &amp; commercial positioning plans</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Channel &amp; strategic partner identification</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Executive relationship-building frameworks</li>
+                </ul>
+              </div>
+              <button type="button" data-inquire-service="Strategic Business Development" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-blue hover:text-navy-900 transition-colors">
+                <span>Request advisory scope</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </article>
+
+            <!-- Service 6: Outbound Campaign Strategy -->
+            <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm hover:border-brand-blue/50 transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-12 h-12 rounded-xl bg-navy-900 text-brand-cyan flex items-center justify-center">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+                  </div>
+                  <span class="text-xs font-bold text-slate-400">06</span>
+                </div>
+                <h3 class="font-display font-bold text-xl text-navy-900 mb-3">Outbound Campaign Strategy</h3>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                  Consultative, intelligence-led outbound architectures engineered to initiate high-trust B2B conversations without generic mass-marketing noise.
+                </p>
+                <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-4 mb-6">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Segment-specific value proposition messaging</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Multi-touch executive outreach sequencing</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>Brand-safe deliverability &amp; cadence governance</li>
+                </ul>
+              </div>
+              <button type="button" data-inquire-service="Outbound Campaign Strategy" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-blue hover:text-navy-900 transition-colors">
+                <span>Request advisory scope</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </article>
+
+            <!-- Service 7: Sales Development Support -->
+            <article class="bg-white border border-slate-200 rounded-xl p-8 shadow-sm hover:border-brand-blue/50 transition-all flex flex-col justify-between md:col-span-2 lg:col-span-3">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div class="lg:col-span-8">
+                  <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-brand-cyan flex items-center justify-center flex-shrink-0">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
+                    </div>
+                    <div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-brand-blue">07 &mdash; Commercial Enablement</span>
+                      <h3 class="font-display font-bold text-xl sm:text-2xl text-navy-900">Sales Development Support</h3>
+                    </div>
+                  </div>
+                  <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    Dedicated research, account preparation, and commercial enablement designed to equip your internal sales leaders with verified buyer intelligence, structured qualification criteria, and discovery briefing notes prior to executive conversations.
+                  </p>
+                </div>
+                <div class="lg:col-span-4 lg:text-right">
+                  <button type="button" data-inquire-service="Sales Development Support" class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-navy-800 text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-colors">
+                    <span>Discuss Sales Enablement</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Engagement Methodology -->
+      <div class="py-20 bg-brand-surface border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mb-14">
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">How We Work</p>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-navy-900 tracking-tight">
+              A disciplined four-stage advisory process
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl p-7 border border-slate-200">
+              <span class="inline-block text-xs font-extrabold text-brand-blue bg-blue-50 px-2.5 py-1 rounded mb-4">STAGE 01</span>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Discovery &amp; Alignment</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                We define your commercial objectives, core offerings, ideal buyer profile, and priority target regions.
+              </p>
+            </div>
+            <div class="bg-white rounded-xl p-7 border border-slate-200">
+              <span class="inline-block text-xs font-extrabold text-brand-blue bg-blue-50 px-2.5 py-1 rounded mb-4">STAGE 02</span>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Intelligence &amp; Mapping</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Our team conducts primary and secondary market research to map high-fit organisations and key decision-makers.
+              </p>
+            </div>
+            <div class="bg-white rounded-xl p-7 border border-slate-200">
+              <span class="inline-block text-xs font-extrabold text-brand-blue bg-blue-50 px-2.5 py-1 rounded mb-4">STAGE 03</span>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Outreach Architecture</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                We structure relevance-first messaging and commercial positioning tailored to each buyer segment.
+              </p>
+            </div>
+            <div class="bg-white rounded-xl p-7 border border-slate-200">
+              <span class="inline-block text-xs font-extrabold text-brand-blue bg-blue-50 px-2.5 py-1 rounded mb-4">STAGE 04</span>
+              <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Execution &amp; Handover</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                We deliver structured intelligence dossiers and support commercial execution so your team engages with confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 4: MARKET SOLUTIONS (Including US Market Expansion)            -->
+    <!-- =================================================================== -->
+    <section id="view-solutions" class="page-view">
+      
+      <!-- Subpage Header -->
+      <div class="hero-backdrop text-white py-20 sm:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 dot-matrix opacity-30 pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-2 text-xs font-medium text-slate-300 mb-4">
+            <a href="#home" data-route="home" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-brand-cyan">Market Solutions</span>
+          </div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan mb-3">International Growth Strategy</p>
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight max-w-3xl leading-tight mb-5">
+            Structured solutions for entering new markets and reaching the right buyers
+          </h1>
+          <p class="text-slate-200 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Whether expanding across borders or entering the United States market, Vossentra equips your business with clarity on buyer demand, market structure, and commercial entry strategy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Solution Explorer -->
+      <div class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mb-12">
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">Strategic Focus Areas</p>
+            <h2 class="font-display font-bold text-3xl sm:text-4xl text-navy-900 tracking-tight mb-4">
+              How we solve cross-border commercial challenges
+            </h2>
+            <p class="text-slate-600 text-base">
+              Select a strategic objective below to explore how Vossentra structures research and market development around your expansion goals.
+            </p>
+          </div>
+
+          <!-- Interactive Solution Tabs -->
+          <div class="flex flex-wrap gap-2.5 mb-8" role="tablist" aria-label="Market Solutions Categories">
+            <button type="button" role="tab" aria-selected="true" data-solution-tab="buyers" class="solution-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-navy-900 text-white transition-all">
+              Identifying Potential Buyers
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-solution-tab="new-markets" class="solution-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-surface text-slate-700 hover:bg-slate-200/70 transition-all">
+              Exploring New Markets
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-solution-tab="opportunities" class="solution-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-surface text-slate-700 hover:bg-slate-200/70 transition-all">
+              Researching Business Opportunities
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-solution-tab="growth-strategy" class="solution-tab-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-surface text-slate-700 hover:bg-slate-200/70 transition-all">
+              International Growth Strategy
+            </button>
+          </div>
+
+          <!-- Solution Tab Content Panel -->
+          <div id="solution-panel-container" class="bg-brand-surface border border-slate-200 rounded-2xl p-8 sm:p-10">
+            <!-- Panel 1: Identifying Potential Buyers -->
+            <div id="solution-panel-buyers" class="solution-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">Buyer Intelligence</span>
+                <h3 class="font-display font-bold text-2xl sm:text-3xl text-navy-900 mb-4">Identifying Potential Buyers with Commercial Fit</h3>
+                <p class="text-slate-600 text-base leading-relaxed mb-5">
+                  Expanding into a new vertical or region fails when sales teams target organisations without genuine operational alignment. We analyse firmographic attributes, operational triggers, and technology or service gaps to isolate companies that match your ideal buyer profile.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700">
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Account Qualification</strong>
+                    <span>Filtering target enterprises by size, sector maturity, and commercial relevance.</span>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Stakeholder Alignment</strong>
+                    <span>Mapping the exact functional leaders responsible for evaluating external partners.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-7">
+                <h4 class="font-display font-bold text-base text-navy-900 mb-3">Key Deliverables</h4>
+                <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Segmented Ideal Buyer Matrix</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Curated Target Account Profiles</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Decision-Maker Role &amp; Influence Mapping</span></li>
+                </ul>
+                <a href="#contact" data-route="contact" class="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-navy-800 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors">
+                  <span>Discuss Buyer Mapping</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Panel 2: Exploring New Markets -->
+            <div id="solution-panel-new-markets" class="solution-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">Geographic Expansion</span>
+                <h3 class="font-display font-bold text-2xl sm:text-3xl text-navy-900 mb-4">Exploring New Markets Before Committing Resources</h3>
+                <p class="text-slate-600 text-base leading-relaxed mb-5">
+                  Every international territory carries distinct buyer expectations, procurement cycles, and competitive incumbents. We provide structured market scoping so your leadership team understands commercial realities before launching full-scale operations.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700">
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Market Readiness</strong>
+                    <span>Assessing sector maturity, local competition, and positioning requirements.</span>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Entry Pathways</strong>
+                    <span>Evaluating direct B2B outreach versus regional channel partnerships.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-7">
+                <h4 class="font-display font-bold text-base text-navy-900 mb-3">Key Deliverables</h4>
+                <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Regional Market Entry Briefings</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Competitive Landscape Benchmarking</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Prioritised Territory Rollout Roadmap</span></li>
+                </ul>
+                <a href="#contact" data-route="contact" class="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-navy-800 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors">
+                  <span>Scope a Target Region</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Panel 3: Researching Business Opportunities -->
+            <div id="solution-panel-opportunities" class="solution-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">Opportunity Discovery</span>
+                <h3 class="font-display font-bold text-2xl sm:text-3xl text-navy-900 mb-4">Researching Commercial &amp; Partnership Opportunities</h3>
+                <p class="text-slate-600 text-base leading-relaxed mb-5">
+                  Beyond direct enterprise sales, international growth often unlocks through strategic alliances, supply-chain integration, and niche vertical expansion. We investigate where demand gaps align with your core strengths.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700">
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Demand Signal Analysis</strong>
+                    <span>Identifying sectors undergoing regulatory, digital, or operational shifts.</span>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Ecosystem Mapping</strong>
+                    <span>Uncovering potential strategic partners, integrators, and enterprise buyers.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-7">
+                <h4 class="font-display font-bold text-base text-navy-900 mb-3">Key Deliverables</h4>
+                <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Vertical Opportunity Assessment</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Strategic Partner Shortlists</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Commercial Positioning Recommendations</span></li>
+                </ul>
+                <a href="#contact" data-route="contact" class="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-navy-800 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors">
+                  <span>Explore Opportunity Research</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Panel 4: International Growth Strategy -->
+            <div id="solution-panel-growth-strategy" class="solution-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7">
+                <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">Go-To-Market Execution</span>
+                <h3 class="font-display font-bold text-2xl sm:text-3xl text-navy-900 mb-4">Developing Disciplined International Growth Strategies</h3>
+                <p class="text-slate-600 text-base leading-relaxed mb-5">
+                  We translate market research into structured commercial action—aligning your value proposition, target account tiers, and executive outreach cadence for repeatable international expansion.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700">
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Value Messaging</strong>
+                    <span>Adapting commercial narratives to resonate with international decision-makers.</span>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl border border-slate-200/80">
+                    <strong class="block text-navy-900 mb-1">Outbound Governance</strong>
+                    <span>Structured multi-channel engagement frameworks built for enterprise credibility.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-7">
+                <h4 class="font-display font-bold text-base text-navy-900 mb-3">Key Deliverables</h4>
+                <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Cross-Border Go-To-Market Playbook</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Decision-Maker Outreach Frameworks</span></li>
+                  <li class="flex items-start gap-2.5"><span class="text-brand-blue font-bold">&#10003;</span><span>Sales Development Enablement Briefs</span></li>
+                </ul>
+                <a href="#contact" data-route="contact" class="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-navy-800 text-white text-sm font-semibold px-5 py-3 rounded-lg transition-colors">
+                  <span>Plan Your Growth Strategy</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dedicated Spotlight: United States Market Opportunities -->
+      <div class="py-20 bg-navy-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 dot-matrix opacity-25 pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6">
+              <div class="inline-flex items-center gap-2 bg-brand-blue/30 border border-sky-400/30 text-brand-cyan text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-5">
+                <span>Regional Spotlight</span>
+              </div>
+              <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight leading-tight mb-5">
+                United States Market Opportunities &amp; Expansion Support
+              </h2>
+              <p class="text-slate-200 text-base sm:text-lg leading-relaxed mb-5">
+                The United States represents one of the world&rsquo;s largest and most competitive B2B commercial ecosystems. Succeeding in the US market requires sharp segmentation, localized value positioning, and direct alignment with US executive decision-making norms.
+              </p>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+                Vossentra assists international businesses evaluating or entering the US market by mapping high-fit regional sectors, identifying mid-market and enterprise buyers, and structuring consultative outreach tailored for American commercial leaders.
+              </p>
+              <button type="button" data-inquire-service="US Market Opportunities" class="inline-flex items-center gap-2 bg-brand-cyan hover:bg-sky-400 text-navy-950 font-bold text-sm sm:text-base px-7 py-3.5 rounded-full transition-colors">
+                <span>Explore US Market Entry</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </button>
+            </div>
+
+            <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
+                <h3 class="font-display font-bold text-lg text-white mb-2">US Sector &amp; Regional Focus</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Targeted mapping across key US commercial corridors and industry hubs rather than broad, unfocused national campaigns.
+                </p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
+                <h3 class="font-display font-bold text-lg text-white mb-2">Buyer Hierarchy Clarity</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Identifying VPs, Directors, and C-suite stakeholders who hold budget authority within US mid-market and enterprise firms.
+                </p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
+                <h3 class="font-display font-bold text-lg text-white mb-2">Localized Positioning</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Refining commercial messaging to match the direct, ROI-focused communication style expected by US buyers.
+                </p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
+                <h3 class="font-display font-bold text-lg text-white mb-2">Global Cross-Border Reach</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                  Alongside the US, we support market intelligence and buyer research across Europe, the Middle East, and Asia-Pacific.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 5: CONTACT                                                     -->
+    <!-- =================================================================== -->
+    <section id="view-contact" class="page-view">
+      
+      <!-- Subpage Header -->
+      <div class="hero-backdrop text-white py-20 sm:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 dot-matrix opacity-30 pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-2 text-xs font-medium text-slate-300 mb-4">
+            <a href="#home" data-route="home" class="hover:text-white">Home</a>
+            <span>/</span>
+            <span class="text-brand-cyan">Contact</span>
+          </div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan mb-3">Contact Us</p>
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight max-w-3xl leading-tight mb-5">
+            Let&rsquo;s discuss your international growth objectives
+          </h1>
+          <p class="text-slate-200 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Share a brief overview of your organisation and the markets you are exploring. Every enquiry is reviewed personally by our advisory team.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="py-20 bg-brand-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left Column: Direct Contact Details (Location strictly Worldwide) -->
+            <div class="lg:col-span-5 space-y-8">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3">Direct Communication</p>
+                <h2 class="font-display font-bold text-2xl sm:text-3xl text-navy-900 tracking-tight mb-4">
+                  Start a conversation with Vossentra
+                </h2>
+                <p class="text-slate-600 text-base leading-relaxed">
+                  Whether you have a defined target region in mind or are evaluating international expansion options, we welcome the opportunity to understand your objectives.
+                </p>
+              </div>
+
+              <div class="bg-white border border-slate-200 rounded-2xl p-7 space-y-6 shadow-sm">
+                <!-- Business Email -->
+                <div class="flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"/></svg>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <span class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Business Email</span>
+                    <a href="mailto:ezejah.growth@gmail.com" class="block font-display font-bold text-base sm:text-lg text-navy-900 hover:text-brand-blue break-all transition-colors">
+                      ezejah.growth@gmail.com
+                    </a>
+                    <button type="button" id="copy-email-btn" class="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue hover:text-navy-900 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-md transition-colors">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                      <span id="copy-email-label">Copy email address</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Location: Worldwide -->
+                <div class="flex items-start gap-4 border-t border-slate-100 pt-6">
+                  <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3a14.5 14.5 0 0 1 0 18 14.5 14.5 0 0 1 0-18"/></svg>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Operating Scope</span>
+                    <strong class="block font-display font-bold text-base text-navy-900">Worldwide</strong>
+                    <span class="block text-sm text-slate-600 mt-0.5">Serving medium-sized and established B2B organisations globally.</span>
+                  </div>
+                </div>
+
+                <!-- Confidentiality Notice -->
+                <div class="flex items-start gap-4 border-t border-slate-100 pt-6">
+                  <div class="w-11 h-11 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6l-8-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Confidentiality</span>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      All commercial enquiries and market expansion discussions are handled with strict confidentiality.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Consultation Inquiry Form -->
+            <div class="lg:col-span-7">
+              <div class="bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm">
+                <h3 class="font-display font-bold text-2xl text-navy-900 mb-2">Send an Advisory Enquiry</h3>
+                <p class="text-sm text-slate-600 mb-8">Fields marked with <span class="text-red-600 font-semibold">*</span> are required.</p>
+
+                <!-- Form Confirmation Banner (Hidden until submitted) -->
+                <div id="form-success-box" class="hidden mb-8 bg-emerald-50 border border-emerald-200 rounded-xl p-6 text-emerald-950">
+                  <div class="flex items-start gap-3.5">
+                    <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                      <h4 class="font-display font-bold text-lg text-emerald-900 mb-1">Enquiry Prepared &amp; Recorded</h4>
+                      <p class="text-sm text-emerald-800 leading-relaxed mb-4">
+                        Thank you for contacting Vossentra. Your message details have been validated. You can also send this enquiry directly via your email client to <strong class="underline">ezejah.growth@gmail.com</strong> using the button below.
+                      </p>
+                      <div class="flex flex-wrap gap-3">
+                        <a id="direct-mailto-link" href="mailto:ezejah.growth@gmail.com" class="inline-flex items-center gap-2 bg-navy-900 hover:bg-brand-blue text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors">
+                          <span>Open in Email Client</span>
+                          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                        <button type="button" id="reset-form-btn" class="inline-flex items-center gap-1.5 bg-white border border-emerald-300 text-emerald-900 hover:bg-emerald-100 text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors">
+                          <span>Send Another Enquiry</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Validation Error Banner -->
+                <div id="form-error-box" class="hidden mb-6 bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-800">
+                  Please complete all required fields with a valid business email address before submitting.
+                </div>
+
+                <form id="vossentra-contact-form" novalidate class="space-y-6">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label for="contact-name" class="block text-sm font-semibold text-navy-900 mb-2">Full Name <span class="text-red-600">*</span></label>
+                      <input type="text" id="contact-name" name="name" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow" />
+                    </div>
+
+                    <div>
+                      <label for="contact-email" class="block text-sm font-semibold text-navy-900 mb-2">Business Email <span class="text-red-600">*</span></label>
+                      <input type="email" id="contact-email" name="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow" />
+                    </div>
+
+                    <div>
+                      <label for="contact-company" class="block text-sm font-semibold text-navy-900 mb-2">Company Name <span class="text-red-600">*</span></label>
+                      <input type="text" id="contact-company" name="company" required placeholder="Organisation name" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow" />
+                    </div>
+
+                    <div>
+                      <label for="contact-role" class="block text-sm font-semibold text-navy-900 mb-2">Job Title</label>
+                      <input type="text" id="contact-role" name="role" placeholder="e.g. VP of Commercial Growth" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow" />
+                    </div>
+
+                    <div>
+                      <label for="contact-region" class="block text-sm font-semibold text-navy-900 mb-2">Your Region</label>
+                      <input type="text" id="contact-region" name="region" placeholder="e.g. North America, Europe, APAC" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow" />
+                    </div>
+
+                    <div>
+                      <label for="contact-service" class="block text-sm font-semibold text-navy-900 mb-2">Area of Interest</label>
+                      <select id="contact-service" name="service" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow">
+                        <option value="General Advisory Enquiry">Select a service area</option>
+                        <option value="B2B Market Intelligence">B2B Market Intelligence</option>
+                        <option value="International Market Research">International Market Research</option>
+                        <option value="Market Opportunity Identification">Market Opportunity Identification</option>
+                        <option value="Buyer and Decision-Maker Research">Buyer and Decision-Maker Research</option>
+                        <option value="Strategic Business Development">Strategic Business Development</option>
+                        <option value="Outbound Campaign Strategy">Outbound Campaign Strategy</option>
+                        <option value="Sales Development Support">Sales Development Support</option>
+                        <option value="US Market Opportunities">US Market Opportunities</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="contact-markets" class="block text-sm font-semibold text-navy-900 mb-2">Target Markets &amp; Sectors</label>
+                    <input type="text" id="contact-markets" name="markets" placeholder="e.g. United States B2B SaaS, European Industrial Tech" class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow" />
+                  </div>
+
+                  <div>
+                    <label for="contact-message" class="block text-sm font-semibold text-navy-900 mb-2">How can we support your objectives? <span class="text-red-600">*</span></label>
+                    <textarea id="contact-message" name="message" rows="4" required placeholder="Outline your business goals, target buyer profile, or international expansion plans..." class="w-full px-4 py-3 rounded-lg border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue transition-shadow"></textarea>
+                  </div>
+
+                  <div class="pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <button type="submit" class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-navy-800 text-white font-bold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-sm transition-colors">
+                      <span>Submit Enquiry</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                    </button>
+                    <span class="text-xs text-slate-500">Direct email: <a href="mailto:ezejah.growth@gmail.com" class="text-brand-blue font-medium hover:underline">ezejah.growth@gmail.com</a></span>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- CORPORATE FOOTER                                                      -->
+  <!-- ===================================================================== -->
+  <footer class="bg-navy-950 text-slate-300 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Column -->
+        <div class="lg:col-span-5">
+          <a href="#home" data-route="home" class="inline-flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 flex-shrink-0">
+              <svg viewBox="0 0 120 105" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" aria-hidden="true">
+                <path d="M12 22H36L57 68L45 94L12 22Z" fill="#0088E0"/>
+                <path d="M45 94L68 44H90L62 94H45Z" fill="#38BDF8"/>
+                <path d="M16 64C28 42 52 24 81 17" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round"/>
+                <circle cx="95" cy="24" r="19" fill="#0066CC"/>
+                <path d="M87 13C90 12 94 14 93 18C92 21 88 22 86 20C84 18 85 14 87 13Z" fill="#FFFFFF" fill-opacity="0.9"/>
+                <path d="M98 16C102 15 107 18 106 23C105 27 101 29 98 27C95 25 95 18 98 16Z" fill="#FFFFFF" fill-opacity="0.92"/>
+              </svg>
+            </div>
+            <div>
+              <span class="block font-display font-extrabold text-xl tracking-wider text-white leading-none">VOSSENTRA</span>
+              <span class="block text-[11px] italic text-slate-400 mt-0.5">Connecting Markets to Opportunity.</span>
+            </div>
+          </a>
+          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+            An international B2B market intelligence and growth agency helping businesses identify market opportunities, understand prospective buyers, and build strategic business connections worldwide.
+          </p>
+        </div>
+
+        <!-- Navigation Column -->
+        <div class="lg:col-span-2">
+          <h4 class="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">Company</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#home" data-route="home" class="hover:text-brand-cyan transition-colors">Home</a></li>
+            <li><a href="#about" data-route="about" class="hover:text-brand-cyan transition-colors">About Us</a></li>
+            <li><a href="#services" data-route="services" class="hover:text-brand-cyan transition-colors">Services</a></li>
+            <li><a href="#solutions" data-route="solutions" class="hover:text-brand-cyan transition-colors">Market Solutions</a></li>
+            <li><a href="#contact" data-route="contact" class="hover:text-brand-cyan transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div class="lg:col-span-3">
+          <h4 class="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">Core Services</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#services" data-route="services" class="hover:text-brand-cyan transition-colors">B2B Market Intelligence</a></li>
+            <li><a href="#services" data-route="services" class="hover:text-brand-cyan transition-colors">International Market Research</a></li>
+            <li><a href="#services" data-route="services" class="hover:text-brand-cyan transition-colors">Buyer &amp; Decision-Maker Research</a></li>
+            <li><a href="#services" data-route="services" class="hover:text-brand-cyan transition-colors">Strategic Business Development</a></li>
+            <li><a href="#services" data-route="services" class="hover:text-brand-cyan transition-colors">Outbound Campaign Strategy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="lg:col-span-2">
+          <h4 class="font-display font-bold text-xs uppercase tracking-widest text-white mb-4">Get in Touch</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li>
+              <a href="mailto:ezejah.growth@gmail.com" class="text-brand-cyan hover:underline break-all">ezejah.growth@gmail.com</a>
+            </li>
+            <li class="text-slate-400">Location: Worldwide</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>&copy; 2026 Vossentra. All rights reserved.</p>
+        <p class="italic text-slate-300">Connecting Markets to Opportunity.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: Multi-Page Routing, Interactive Tabs, Copy & Form Logic   -->
+  <!-- ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const views = {
+        home: document.getElementById('view-home'),
+        about: document.getElementById('view-about'),
+        services: document.getElementById('view-services'),
+        solutions: document.getElementById('view-solutions'),
+        contact: document.getElementById('view-contact'),
+      };
+
+      const desktopNavLinks = document.querySelectorAll('.nav-item');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-item');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
+
+      // 1. Multi-Page View Router
+      function navigateTo(route, updateHash = true) {
+        const targetRoute = views[route] ? route : 'home';
+
+        // Toggle active view
+        Object.keys(views).forEach((key) => {
+          if (key === targetRoute) {
+            views[key].classList.add('active');
+          } else {
+            views[key].classList.remove('active');
+          }
+        });
+
+        // Update desktop navigation active styles
+        desktopNavLinks.forEach((link) => {
+          if (link.dataset.route === targetRoute) {
+            link.classList.remove('text-slate-700', 'border-transparent', 'font-medium');
+            link.classList.add('text-brand-blue', 'border-brand-blue', 'font-semibold');
+          } else {
+            link.classList.remove('text-brand-blue', 'border-brand-blue', 'font-semibold');
+            link.classList.add('text-slate-700', 'border-transparent', 'font-medium');
+          }
+        });
+
+        // Update mobile navigation active styles
+        mobileNavLinks.forEach((link) => {
+          if (link.dataset.route === targetRoute) {
+            link.classList.remove('text-slate-700', 'font-medium');
+            link.classList.add('bg-brand-surface', 'text-brand-blue', 'font-semibold');
+          } else {
+            link.classList.remove('bg-brand-surface', 'text-brand-blue', 'font-semibold');
+            link.classList.add('text-slate-700', 'font-medium');
+          }
+        });
+
+        // Close mobile drawer if open
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuIconOpen.classList.remove('hidden');
+          menuIconClose.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        // Update URL hash cleanly
+        if (updateHash) {
+          history.replaceState(null, '', `#${targetRoute}`);
+        }
+
+        // Smooth scroll to top of page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Trigger scroll reveal check for newly displayed view
+        setTimeout(triggerScrollReveals, 80);
+      }
+
+      // Attach click handlers to all route triggers
+      document.querySelectorAll('[data-route]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          const route = el.dataset.route;
+          navigateTo(route);
+        });
+      });
+
+      // Handle initial hash on load
+      const initialHash = window.location.hash.replace('#', '').toLowerCase();
+      if (initialHash && views[initialHash]) {
+        navigateTo(initialHash, false);
+      } else {
+        navigateTo('home', false);
+      }
+
+      // 2. Mobile Menu Toggle
+      mobileMenuBtn.addEventListener('click', () => {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
+        mobileMenu.classList.toggle('hidden');
+        menuIconOpen.classList.toggle('hidden');
+        menuIconClose.classList.toggle('hidden');
+      });
+
+      // 3. Service Inquiry Pre-selection Trigger
+      document.querySelectorAll('[data-inquire-service]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const serviceName = btn.getAttribute('data-inquire-service');
+          const serviceSelect = document.getElementById('contact-service');
+          if (serviceSelect && serviceName) {
+            serviceSelect.value = serviceName;
+          }
+          navigateTo('contact');
+        });
+      });
+
+      // 4. Market Solutions Interactive Tabs
+      const solutionTabBtns = document.querySelectorAll('.solution-tab-btn');
+      const solutionPanels = document.querySelectorAll('.solution-panel');
+
+      solutionTabBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetTab = btn.dataset.solutionTab;
+
+          solutionTabBtns.forEach((b) => {
+            b.setAttribute('aria-selected', 'false');
+            b.classList.remove('bg-navy-900', 'text-white');
+            b.classList.add('bg-brand-surface', 'text-slate-700');
+          });
+
+          btn.setAttribute('aria-selected', 'true');
+          btn.classList.remove('bg-brand-surface', 'text-slate-700');
+          btn.classList.add('bg-navy-900', 'text-white');
+
+          solutionPanels.forEach((panel) => {
+            if (panel.id === `solution-panel-${targetTab}`) {
+              panel.classList.remove('hidden');
+            } else {
+              panel.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 5. Copy Business Email Utility (iframe-safe fallback)
+      const copyEmailBtn = document.getElementById('copy-email-btn');
+      const copyEmailLabel = document.getElementById('copy-email-label');
+
+      if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', () => {
+          const email = 'ezejah.growth@gmail.com';
+          const tempInput = document.createElement('input');
+          tempInput.value = email;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          try {
+            document.execCommand('copy');
+            copyEmailLabel.textContent = 'Copied to clipboard!';
+            setTimeout(() => {
+              copyEmailLabel.textContent = 'Copy email address';
+            }, 2500);
+          } catch (err) {
+            copyEmailLabel.textContent = email;
+          }
+          document.body.removeChild(tempInput);
+        });
+      }
+
+      // 6. Interactive Contact Form Handling
+      const contactForm = document.getElementById('vossentra-contact-form');
+      const formSuccessBox = document.getElementById('form-success-box');
+      const formErrorBox = document.getElementById('form-error-box');
+      const directMailtoLink = document.getElementById('direct-mailto-link');
+      const resetFormBtn = document.getElementById('reset-form-btn');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('contact-name').value.trim();
+          const email = document.getElementById('contact-email').value.trim();
+          const company = document.getElementById('contact-company').value.trim();
+          const role = document.getElementById('contact-role').value.trim();
+          const region = document.getElementById('contact-region').value.trim();
+          const service = document.getElementById('contact-service').value;
+          const markets = document.getElementById('contact-markets').value.trim();
+          const message = document.getElementById('contact-message').value.trim();
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!name || !email || !emailPattern.test(email) || !company || !message) {
+            formErrorBox.classList.remove('hidden');
+            formSuccessBox.classList.add('hidden');
+            return;
+          }
+
+          formErrorBox.classList.add('hidden');
+
+          // Construct pre-filled mailto link so enquiries can be dispatched directly to ezejah.growth@gmail.com
+          const subject = encodeURIComponent(`Vossentra Advisory Enquiry — ${company} (${service})`);
+          const bodyLines = [
+            `Full Name: ${name}`,
+            `Business Email: ${email}`,
+            `Company: ${company}`,
+            role ? `Job Title: ${role}` : null,
+            region ? `Region: ${region}` : null,
+            `Area of Interest: ${service}`,
+            markets ? `Target Markets: ${markets}` : null,
+            '',
+            'Project / Growth Objectives:',
+            message
+          ].filter(Boolean).join('\n');
+
+          directMailtoLink.href = `mailto:ezejah.growth@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyLines)}`;
+
+          contactForm.classList.add('hidden');
+          formSuccessBox.classList.remove('hidden');
+        });
+
+        resetFormBtn.addEventListener('click', () => {
+          contactForm.reset();
+          formSuccessBox.classList.add('hidden');
+          contactForm.classList.remove('hidden');
+        });
+      }
+
+      // 7. Subtle Scroll Reveal Animation
+      function triggerScrollReveals() {
+        const items = document.querySelectorAll('.page-view.active .reveal-item');
+        items.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 40) {
+            item.classList.add('is-visible');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', triggerScrollReveals, { passive: true });
+      triggerScrollReveals();
+    });
+  </script>
+</body>
+</html>
